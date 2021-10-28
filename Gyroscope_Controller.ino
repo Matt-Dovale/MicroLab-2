@@ -1,8 +1,5 @@
-// MPU-6050 Short Example Sketch
-//www.elegoo.com
-//2016.12.9
-
 #include<Wire.h>
+
 const int MPU_addr=0x68;  // I2C address of the MPU-6050
 int16_t GyX,GyY,GyZ;
 int buzzer = 8;
@@ -45,7 +42,7 @@ void loop(){
     Serial.println("r");
   }
 
-  if (Serial.available() > 0){
+  if (Serial.available() > 0){ // Buzzer beeps 
     incomingByte = Serial.read();
     if(incomingByte = 'B'){
       digitalWrite(buzzer, HIGH);
